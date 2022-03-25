@@ -1,0 +1,23 @@
+import java.util.*;
+public class sortmapKey {
+                        static Map<String, String> map = new HashMap<>();
+                        public static void sortbykey()
+                  {
+                          ArrayList<String> sortedKeys = new ArrayList<String>(map.keySet()); 
+                           Collections.sort(sortedKeys);
+        
+
+                      for (String x : sortedKeys)
+                              System.out.println("Key = " + x
+                                          + ", Value = " + map.get(x));
+                    }
+   public static void main(String args[])
+    {
+        map.put("Cow", "Domestic");
+        map.put("Lion", "Wild");
+        map.put("Snake", "Reptile");
+        map.put("Whale", "Aquatic");
+        map.put("Tortoise", "Aphibian");
+        sortbykey();
+    }
+}
