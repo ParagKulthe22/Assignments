@@ -1,0 +1,22 @@
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+public class ReadWritefile {
+    public static void main(String[] args) throws IOException {
+        File source = new File("D:\\input.txt");
+        FileInputStream inputStream = new FileInputStream(source);
+        Scanner sc = new Scanner(inputStream);
+        StringBuffer buffer = new StringBuffer();
+        while(sc.hasNext()) {
+            buffer.append(" "+sc.nextLine());
+        }
+        System.out.println("Original File Contains = "+buffer);
+        File destination = new File("D:\\Output.txt");
+        FileWriter writer = new FileWriter(destination);
+        writer.write(buffer.toString());
+        writer.flush();
+        System.out.println("File Is Copied Successfully !");
+    }
+}
